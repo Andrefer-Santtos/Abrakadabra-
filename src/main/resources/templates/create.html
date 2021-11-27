@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Create</title>
+</head>
+<body id="background">
+   <!-- MODAL CREATE -->
+			<div id="modal">
+				<div class="modal_create">
+					<h1>Insert Best Deck</h1>
+					<hr>
+					<br>
+					<form action="/" method="POST">
+		
+						<div>
+							<input type="url" name="img" placeholder="Link da Imagem">
+						</div>
+						
+						<br>
+		
+						<div>
+							<input type="text" name="Nome" placeholder="Baralho">
+						</div>
+		
+						<br>
+		
+						<div>
+							<input type="text" name="description" placeholder="Descrição do Baralho">
+						</div>
+		
+						<br>
+		
+						<a href="/">Voltar</a>
+						<button class="button" onclick="create()">Salvar</button>
+		
+					</form>
+				</div>
+			</div>
+			<script type="text/javascript" src="create.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Lens by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Abrakadabra</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body class="is-preload-0 is-preload-1 is-preload-2">
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Abrakadabra ♣♥♠♦</h1>
+						<p>The best of deck cards 🃏</p>
+						<ul class="icons">
+							<li><a href="/create" class="material-icons" onclick="create()"><span class="label">add</span></a></li>
+							<li><a href="/update" class="material-icons" onclick="update()"><span class="label">upgrade</span></a></li>
+							<li><a href="/delete" class="material-icons" onclick="del()"><span class="label">delete</span></a></li>
+						</ul>
+					</header>
+
+				<!-- Thumbnail -->
+					<section id="thumbnails">
+						<article th:each="baralho : ${baralhos}">
+							<a class="thumbnail" th:href="${baralho.img}" data-position="left center"><img th:src="${baralho.img}"  alt="" /></a>
+							<h2 th:text="${baralho.nome}"></h2>
+							<p th:text="${baralho.descricao}"></p>
+						</article>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy;</li><li>Design by: <a href="http://html5up.net">Abrakadabra🎩</a>.</li>
+						</ul>
+					</footer>
+
+			</div>
+			<!-- MODAL CREATE -->
+			<div id="modal" class="hide">
+				<div class="modal_create">
+					<h1>Insert Best Deck</h1>
+					<hr>
+					<br>
+					<form action="/" method="POST">
+		
+						<div>
+							<label for="img">Link da Imagem</label>
+							<input type="url" name="img">
+						</div>
+						
+						<br>
+		
+						<div>
+							<label for="Nome">Baralho</label>
+							<input type="text" name="Nome">
+						</div>
+		
+						<br>
+		
+						<div>
+							<label for="description">Descrição do Baralho</label>
+							<input type="text" name="description" place >
+						</div>
+		
+						<br>
+		
+						<a href="#" onclick="create()">Voltar</a>
+						<button class="button">Salvar</button>
+		
+					</form>
+				</div>
+			</div>
+			<!--  MODAL UPDATE  -->
+			<div id="modal" class="hide">
+				<div class="modal_update">
+					<h1>Update Best Deck</h1>
+		
+					<form action="/" method="POST">
+		
+						<div>
+							<select name="update-select"></select>
+							<option value="opcao">Bicycle</option>
+						</div>
+		
+						<div>
+							<label for="img">Link da Imagem</label>
+							<input type="url" name="img">
+						</div>
+		
+						<div>
+							<label for="Nome">Baralho</label>
+							<input type="text" name="Nome">
+						</div>
+		
+						<div>
+							<label for="description">Descrição do Baralho</label>
+							<input type="text" name="description">
+						</div>
+		
+						<a href="#" onclick="update()">Voltar</a>
+						<button class="button">Atualizar</button>
+		
+					</form>
+				</div>
+			</div>
+			<!--  MODAL DELETE  -->
+			<div id="modal" class="hide">
+				<div class="modal_delete">
+					<h1>Delete Best Deck</h1>
+					<hr>
+					<br>
+					<form action="/" method="POST">
+		
+						<select name="delete-select"></select>
+						<option value="opcao"></option>
+						
+						<a href="#" onclick="del()">Voltar</a>
+						<button type="submit" class="button">Deletar</button>
+		
+					</form>
+				</div>
+			</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript" src="/script.js"></script>
+
+	</body>
+</html>

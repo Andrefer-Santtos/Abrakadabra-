@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Update</title>
+</head>
+<body id="background">
+    <!--  MODAL UPDATE  -->
+			<div id="modal">
+				<div class="modal_update">
+					<h1>Update Best Deck</h1>
+		
+					<form action="/" method="POST">
+		
+						<div>
+							<select name="update-select">
+								<option value="opcao" th:each="baralho : ${baralhos}" th:text="${baralho.nome}"></option>
+							</select>
+						</div>
+						<br>
+						<div>
+							<input type="url" name="img" placeholder="Link da Imagem">
+						</div>
+						<br>
+						<div>
+							<input type="text" name="Nome" placeholder="Baralho">
+						</div>
+						<br>
+						<div>
+							<input type="text" name="description" placeholder="Descrição do Baralho">
+						</div>
+						<br>
+						<a href="/">Voltar</a>
+						<button class="button" onclick="update()">Atualizar</button>
+		
+					</form>
+				</div>
+			</div>
+			<script type="text/javascript" src="update.js"></script>
+</body>
+</html>
